@@ -1,0 +1,27 @@
+node_modules/
+dist/
+release/
+out/
+coverage/
+*.log
+logs/
+.DS_Store
+.vite/
+
+# Downloaded third-party binaries are never committed; see scripts/fetch-rclone.ts
+tools/rclone/
+third_party/bin/
+tools/*.exe
+tools/*.zip
+
+# Local, machine specific state
+.env
+.env.local
+*.local.json
+
+# The rclone binary itself is downloaded, not committed (see scripts/fetch-rclone.ts)
+/tools/rclone
+/tools/rclone.exe
+
+# Local runtime state created by `npm run dev`
+/.cloudssd-dev/
