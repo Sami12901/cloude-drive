@@ -1,0 +1,6 @@
+{
+  "version": "1.75.2",
+  "sha256": "ed7ab1f17876bb006c3df3949a3044959671afd9112362dacaa5dd1647735bc1",
+  "source": "PyPI rclone-bin wheel (unofficial mirror of the official rclone build) — used for local testing only",
+  "officialSource": "https://downloads.rclone.org/"
+}

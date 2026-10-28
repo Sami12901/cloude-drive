@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens. The dark theme is the default; the light theme re-declares the
+ * same variables. Components only ever reference the semantic names below, so
+ * switching themes never touches component code.
+ */
+:root,
+.dark {
+  --c-surface-base: 11 15 23;
+  --c-surface-raised: 18 24 38;
+  --c-surface-overlay: 24 32 49;
+  --c-surface-border: 35 44 63;
+  --c-surface-hover: 29 38 55;
+
+  --c-content-primary: 230 235 245;
+  --c-content-secondary: 154 167 189;
+  --c-content-muted: 107 120 143;
+
+  --c-accent: 59 130 246;
+  --c-accent-soft: 30 58 138;
+  --c-accent-hover: 96 165 250;
+
+  --c-warm: 249 115 22;
+  --c-warm-hover: 251 146 60;
+
+  --c-ok: 34 197 94;
+  --c-warn: 245 158 11;
+  --c-error: 239 68 68;
+  --c-info: 56 189 248;
+
+  color-scheme: dark;
+}
+
+.light {
+  --c-surface-base: 244 247 251;
+  --c-surface-raised: 255 255 255;
+  --c-surface-overlay: 255 255 255;
+  --c-surface-border: 219 227 239;
+  --c-surface-hover: 238 243 250;
+
+  --c-content-primary: 15 23 42;
+  --c-content-secondary: 71 85 105;
+  --c-content-muted: 100 116 139;
+
+  --c-accent-soft: 219 234 254;
+
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface-base text-content-primary font-sans antialiased;
+  margin: 0;
+  overflow: hidden;
+}
+
+*:focus-visible {
+  outline: 2px solid rgb(var(--c-accent));
+  outline-offset: 2px;
+}
+
+/* Thin, unobtrusive scrollbars that match the Windows desktop look. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-surface-border));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--c-surface-hover));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

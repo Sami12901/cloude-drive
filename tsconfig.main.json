@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "outDir": "dist/main",
+    "rootDir": "src",
+    "declaration": false,
+    "sourceMap": true,
+    "types": ["node"],
+    "lib": ["ES2022"],
+    "jsx": "react-jsx",
+    "paths": {
+      "@shared/*": ["src/shared/*"]
+    }
+  },
+  "include": ["src/main/**/*.ts", "src/shared/**/*.ts"]
+}
